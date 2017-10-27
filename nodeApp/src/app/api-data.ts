@@ -1,33 +1,31 @@
-export class ApiData {
-}
-
-export class IndexElement {
-	name: string = 'placeholder';
-	subElements: IndexElement[];
-	expandable: boolean = false;
-}
-
-export class Index {
-	indexElements: IndexElement[];
-	debugString: string = 'buggy';
-}
+import { Index, IndexElement, Data, DataElement } from './source-data-types';
+import { DataBody } from './explorer-data-types';
 
 export const fakeIndex: Index = {
 	indexElements: [
-		{ name: 'element 1', subElements: [], expandable: false },
-		{ name: 'element 2', subElements: [], expandable: false },
-		{ name: 'element 3', subElements: [
-			{ name: 'element A', subElements: [], expandable: false },
-			{ name: 'element B', subElements: [], expandable: false }
+		{ name: 'element 1', path: 'path', subElements: [], expandable: false },
+		{ name: 'element 2', path: 'path', subElements: [], expandable: false },
+		{ name: 'element 3', path: 'path', subElements: [
+			{ name: 'element A', path: 'path', subElements: [], expandable: false },
+			{ name: 'element B', path: 'path', subElements: [], expandable: false }
 		], expandable: true },
-		{ name: 'element 4', subElements: [], expandable: false }
+		{ name: 'element 4', path: 'path', subElements: [], expandable: false }
 	], 
 	debugString: 'debuggy'
 };
 
-export class DataBody {
-	entry: string[];
-}
+export const fakeData: Data = {
+	name: 'fake file name',
+	entries: [
+		{ name: 'fake entry 1', body: 'fake body 1'},
+		{ name: 'fake entry 2', body: 'fake body 2'}
+	]
+};
+
+export const fakeDataArray: Data[] = [
+	fakeData,
+	fakeData
+]
 
 export const fakeDataBody: DataBody = {
 	entry: [

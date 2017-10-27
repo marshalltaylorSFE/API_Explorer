@@ -1,7 +1,7 @@
 <div _ngcontent-c0 class="container-fluid fullHeight">
 <div _ngcontent-c0 class="row fullHeight">
 <div _ngcontent-c0 class="col-md-2 col-sm-3 yellow sidenav">
-  <ul>
+  <ul *ngIf="loaded">
     <div *ngFor="let thing of _index.indexElements">
     <li>{{thing.name}}</li>
 	  <ul *ngIf="thing.expandable">
@@ -11,8 +11,8 @@
   </ul>
 </div>
 <div class="col-md-10 col-sm-9 yellow">
-<div *ngFor="let entry of _dataBody.entry">
+<!--div *ngFor="let entry of _dataBody.entry">
 	{{entry}}
-</div>
+</div-->
 </div>
 </div>

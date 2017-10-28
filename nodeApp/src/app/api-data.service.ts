@@ -30,27 +30,55 @@ export class ApiDataService {
   }
 
   getData( reqIndex: Index ): Promise<Data[]> {
-	let tempData: Data;
-	let tempDataArray: Data[] = [];
-	let resData: any;
-	
-	console.log("Getting json for data from index");
-    console.log(JSON.stringify(reqIndex));
-	//debugger;
-	//Iterate through the passed index
-	for (let file of reqIndex.indexElements) {
-		console.log(file);
-		//debugger;
-		this.http.get('assets/' + file.path).subscribe(data => {
-			resData = data;
-			tempData = new Data;
-			tempData.entries = [];
-			//tempData.name = resData.
+    return new Promise(resolve => {
+      // Simulate server latency with 2 second delay
+      setTimeout(() => {
+			let tempData: Data;
+			let tempDataArray: Data[] = [];
+			let resData: any;
+			console.log("Getting json for data from index");
+			console.log(reqIndex);
 			//debugger;
-			
-		});
-	}
-	return Promise.resolve(fakeDataArray);
+			//Iterate through the passed index
+			for (let file of reqIndex.indexElements) {
+				console.log(file);
+				//debugger;
+				this.http.get('assets/' + file.path).subscribe(data => {
+					resData = data;
+					tempData = new Data;
+					tempData.entries = [];
+					//tempData.name = resData.
+					//debugger;
+					
+				});
+			}
+
+		  resolve(fakeDataArray);
+		  }, 2000);
+    });
+//	let tempData: Data;
+//	let tempDataArray: Data[] = [];
+//	let resData: any;
+//	
+//	console.log("Waiting...");
+//	setTimeout(()=>{console.log("Done")}, 4000)
+//	console.log("Getting json for data from index");
+//    console.log(JSON.stringify(reqIndex));
+//	//debugger;
+//	//Iterate through the passed index
+//	for (let file of reqIndex.indexElements) {
+//		console.log(file);
+//		//debugger;
+//		this.http.get('assets/' + file.path).subscribe(data => {
+//			resData = data;
+//			tempData = new Data;
+//			tempData.entries = [];
+//			//tempData.name = resData.
+//			//debugger;
+//			
+//		});
+//	}
+//	return Promise.resolve(fakeDataArray);
   }
   
   querryData(): void {

@@ -1,11 +1,17 @@
 <div _ngcontent-c0 class="container-fluid fullHeight">
 <div _ngcontent-c0 class="row fullHeight">
 <div _ngcontent-c0 class="col-md-2 col-sm-3 yellow sidenav">
-  <ul *ngIf="loaded">
-    <div *ngFor="let thing of _index.indexElements">
-    <li (click)="buildBody(thing.path)">{{thing.name}}</li>
-	  <ul *ngIf="thing.expandable">
-	    <li *ngFor="let subthing of thing.subElements">{{subthing.name}}</li>
+  <ul *ngIf="loaded" class="twistylist">
+    <div *ngFor="let thing of _index.indexElements"> 
+    <li class="clickable">
+		<span *ngIf="thing.expandable" (click)="twist(thing.path); buildBody(thing.path)">
+			<img *ngIf="thing.expanded==true" src="../assets/twistyD.png" alt="" height="14" width="14">
+			<img *ngIf="thing.expanded==false" src="../assets/twistyR.png" alt="" height="14" width="14">
+		</span>
+		<span (click)="buildBody(thing.path)">{{thing.name}}</span>
+	</li>
+	  <ul *ngIf="thing.expandable && thing.expanded">
+	    <li *ngFor="let subthing of thing.subElements" class="subitem">{{subthing.name}}</li>
 	  </ul>
 	</div>
   </ul>

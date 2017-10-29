@@ -80,5 +80,20 @@ export class ApiExplorerComponent implements OnInit {
 	  this.applicationRef.tick();
   }
   
+  twist( inputPath: string ){
+	  for( let item of this._index.indexElements )
+	  {
+		  if( inputPath == item.path ){
+			  if(item.expanded){
+				  item.expanded = false;
+			  } else {
+				  item.expanded = true;
+			  }
+			  console.log( item.path );
+			  this.applicationRef.tick();
+		  }
+	  }
+  }
+  
 
 }

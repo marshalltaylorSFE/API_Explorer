@@ -3,6 +3,7 @@ export class IndexElement {
 	path: string = 'path';
 	subElements: IndexElement[];
 	expandable: boolean = false;
+	expanded: boolean = false;
 }
 
 export class Index {

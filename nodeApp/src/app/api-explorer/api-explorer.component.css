@@ -1,0 +1,14 @@
+.twistylist {
+  //background-color: #607D8B;
+  list-style-type: none;
+  cursor: default;
+  padding: 0 0 0 0;
+}
+
+.twistylist .subitem {
+  list-style-type: none;
+}
+
+.clickable {
+  cursor: pointer;
+}

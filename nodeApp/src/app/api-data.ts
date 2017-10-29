@@ -1,5 +1,5 @@
 import { Index, IndexElement, Data, DataElement } from './source-data-types';
-import { DataBody } from './explorer-data-types';
+//import { DataBody } from './explorer-data-types';
 
 export const fakeIndex: Index = {
 	indexElements: [
@@ -27,9 +27,9 @@ export const fakeDataArray: Data[] = [
 	fakeData
 ]
 
-export const fakeDataBody: DataBody = {
-	entry: [
-	"This is the first information",
-	"This is the second information"
-	]
-};
+//export const fakeDataBody: DataBody = {
+//	entry: [
+//	"This is the first information",
+//	"This is the second information"
+//	]
+//};

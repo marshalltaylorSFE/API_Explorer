@@ -1,0 +1,13 @@
+{
+  "name": "vauxhall.json",
+  "entries": [
+    {
+      "name": "Body",
+      "body": "The body is close to air"
+    },
+    {
+      "name": "Engine",
+      "body": "Engines are made to be unreliable and annoying."
+    }
+  ]
+}

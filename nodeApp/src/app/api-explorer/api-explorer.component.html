@@ -3,7 +3,7 @@
 <div _ngcontent-c0 class="col-md-2 col-sm-3 yellow sidenav">
   <ul *ngIf="loaded">
     <div *ngFor="let thing of _index.indexElements">
-    <li>{{thing.name}}</li>
+    <li (click)="buildBody(thing.path)">{{thing.name}}</li>
 	  <ul *ngIf="thing.expandable">
 	    <li *ngFor="let subthing of thing.subElements">{{subthing.name}}</li>
 	  </ul>
@@ -11,8 +11,8 @@
   </ul>
 </div>
 <div class="col-md-10 col-sm-9 yellow">
-<!--div *ngFor="let entry of _dataBody.entry">
-	{{entry}}
-</div-->
+<div *ngFor="let thing of _dataBody">
+	{{thing.entry}}
+</div>
 </div>
 </div>

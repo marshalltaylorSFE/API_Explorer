@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ApplicationRef } from '@angular/core';
 import { ApiDataService } from '../api-data.service';
 import { Index, IndexElement, Data, DataElement } from '../source-data-types';
-import { DataBody } from '../explorer-data-types';
+import { DataBodyElement } from '../explorer-data-types';
 
 @Component({
   selector: 'app-api-explorer',
@@ -13,9 +13,12 @@ import { DataBody } from '../explorer-data-types';
 export class ApiExplorerComponent implements OnInit {
   _index: Index;
   _data: Data[];
+  _dataBody: DataBodyElement[] = [];
   loaded: boolean = false;
-  constructor( private apiDataService: ApiDataService ) {
-  }
+  constructor( 
+	private apiDataService: ApiDataService,
+	private applicationRef: ApplicationRef
+	){}
 
   async ngOnInit() {
 	//By example, this should seem to work:
@@ -52,8 +55,29 @@ export class ApiExplorerComponent implements OnInit {
 				}
 			};
 		};
+		this.buildBody('');
 	});
+	
 	console.log("ApiExplorerComponent ngOnInit() has run.");
+  }
+  
+  buildBody( inputPath: string ) {
+	  let tempDBE: DataBodyElement;
+	  //access the correct _data stuff
+	  for( let files of this._data ){
+		  if( files.name == inputPath ){
+			this._dataBody = [];
+			for( let entry of files.entries ){
+				//console.log(entry);
+				tempDBE = new DataBodyElement;
+				tempDBE.entry = entry.body;
+				this._dataBody.push(tempDBE);
+			}
+		  }
+	  }
+	  console.log(this._dataBody);
+	  console.log("ApiExplorerComponent buildBody() has run.");
+	  this.applicationRef.tick();
   }
   
 

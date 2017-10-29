@@ -1,3 +1,3 @@
-export class DataBody {
-	entry: string[];
+export class DataBodyElement {
+	entry: string;
 }

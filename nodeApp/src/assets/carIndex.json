@@ -1,0 +1,17 @@
+{
+  "name": "Car Index",
+  "files": [
+    {
+      "name": "Volvo",
+      "path": "volvo.json"
+    },
+    {
+      "name": "Ford",
+      "path": "ford.json"
+    },
+    {
+      "name": "Vauxhall",
+      "path": "vauxhall.json"
+    }
+  ]
+}

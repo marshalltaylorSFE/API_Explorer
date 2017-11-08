@@ -1,0 +1,194 @@
+{
+  "name": "file.json",
+  "topic": "WiFiServer.h",
+  "sections": [
+    {
+      "section": "Overview",
+      "entries": [
+        {
+          "data": [
+            "Goal information",
+            ""
+          ],
+          "entry": "Goal"
+        },
+        {
+          "data": [
+            "Background information",
+            ""
+          ],
+          "entry": "Background"
+        }
+      ]
+    },
+    {
+      "section": "API",
+      "entries": [
+        {
+          "data": [
+            "How to construct",
+            "",
+            "ex: WiFiServer(uint16_t port=80, uint8_t max_clients=4):sockfd(-1),_accepted_sockfd(-1),_port(port),_max_clients(max_clients),_listening(false),_noDelay(false){}",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "entry": "WiFiServer()"
+        },
+        {
+          "data": [
+            "This calls end()",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "entry": "~WiFiServer()"
+        },
+        {
+          "data": [
+            "New Data",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "entry": "available()"
+        },
+        {
+          "data": [
+            "New Data",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "entry": "begin()"
+        },
+        {
+          "data": [
+            "<p>",
+            "Parameters:",
+            "<ul>",
+            "<li>bool nodelay</li>",
+            "<ul>",
+            "<p>",
+            "",
+            "",
+            ""
+          ],
+          "entry": "setNoDelay()"
+        },
+        {
+          "data": [
+            "New Data",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "entry": "getNoDelay()"
+        },
+        {
+          "data": [
+            "New Data",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "entry": "hasClient()"
+        },
+        {
+          "data": [
+            "<p>",
+            "Parameters:",
+            "<ul>",
+            "<li>const uint8_t *data</li>",
+            "<li>size_t len</li>",
+            "<ul>",
+            "<p>",
+            "",
+            "",
+            ""
+          ],
+          "entry": "write()"
+        },
+        {
+          "data": [
+            "<p>",
+            "This calls write(&data, 1);",
+            "</p>",
+            "<p>",
+            "Parameters:",
+            "<ul>",
+            "<li>uint8_t data</li>",
+            "<ul>",
+            "<p>",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "entry": "write"
+        },
+        {
+          "data": [
+            "New Data",
+            "",
+            "",
+            ""
+          ],
+          "entry": "end()"
+        },
+        {
+          "data": [
+            "New Data",
+            "",
+            "",
+            ""
+          ],
+          "entry": "close()"
+        },
+        {
+          "data": [
+            "New Data",
+            "",
+            "",
+            ""
+          ],
+          "entry": "stop()"
+        },
+        {
+          "data": [
+            "Not sure what this does (operator bool(){return _listening;})",
+            ""
+          ],
+          "entry": "bool()"
+        },
+        {
+          "data": [
+            "<p>",
+            "Parameters:",
+            "<ul>",
+            "<li>uint32_t seconds</li>",
+            "<ul>",
+            "<p>",
+            ""
+          ],
+          "entry": "setTimeout"
+        },
+        {
+          "data": [
+            "New Data",
+            "",
+            ""
+          ],
+          "entry": "stopAll()"
+        }
+      ]
+    }
+  ]
+}

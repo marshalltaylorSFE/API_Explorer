@@ -1,0 +1,54 @@
+<div class="container-fluid fullHeight">
+<div class="row fullHeight">
+<div class="col-md-2 col-sm-3 purple sidenav no-padding">
+  <ul class="twistylist">
+    <div *ngFor="let thing of index.indexElements"> 
+		<li class="clickable item" [class.selected]="thing.topicRef == selectedTopic">
+			<span *ngIf="thing.expandable" (click)="twist(thing); buildBody(thing)" class="item">
+				<img *ngIf="thing.expanded==true" class="list-align" src="../assets/twistyD.png" alt="" height="14" width="14">
+				<img *ngIf="thing.expanded==false" class="list-align" src="../assets/twistyR.png" alt="" height="14" width="14">
+			</span>
+			<span (click)="buildBody(thing)">{{thing.name}}</span>
+			<span *ngIf="editing" (click)="createNewSection(thing)" class="glyphicon glyphicon-plus" style="font-size:10px;"></span>
+			<span *ngIf="editing" (click)="downloadFile(thing)" class="glyphicon glyphicon-floppy-disk" style="font-size:12px;"></span>
+		</li>
+		<div *ngIf="thing.expanded==true">
+			<div *ngFor="let thing of thing.subElements" class="subitem"> 
+				<li class="clickable" [class.selected]="thing.sectionRef == selectedSection && thing.topicRef == selectedTopic">
+					<span *ngIf="thing.expandable" (click)="twist(thing); buildBody(thing)" class="item">
+						<img *ngIf="thing.expanded==true" class="list-align" src="../assets/twistyD.png" alt="" height="14" width="14">
+						<img *ngIf="thing.expanded==false" class="list-align" src="../assets/twistyR.png" alt="" height="14" width="14">
+					</span>
+					<span (click)="buildBody(thing)" class="item">{{thing.name}}</span>
+					<span *ngIf="editing" (click)="createNewEntry(thing)" class="glyphicon glyphicon-plus" style="font-size:10px;"></span>
+				</li>
+				<div *ngIf="thing.expandable && thing.expanded" class="subsubitem">
+					<li *ngFor="let subthing of thing.subElements" class="item">{{subthing.name}}</li>
+				</div>
+			</div>
+		</div>
+	</div>
+	<span *ngIf="editing" (click)="createNewFile()" class="glyphicon glyphicon-plus" style="font-size:10px;"></span>
+  </ul>
+  <button (click)="showEdit()">Edit</button>
+  <button (click)="showView()">View</button>
+</div>
+<div class="col-md-10 col-sm-9 yellow">
+	<div *ngIf="editing">
+		<div class="row" style="padding:2px">
+			<span style="width:50px"><strong style="vertical-align: middle">Topic:</strong></span>
+			<span style="width:80%"><input style="width:80%" [(ngModel)]="displayTopic" placeholder="empty"/></span>	
+		</div>
+		<div class="row" style="padding:2px">
+			<span style="width:50px"><strong style="vertical-align: middle">Section:</strong></span>
+			<span style="width:80%"><input style="width:80%" [(ngModel)]="displaySection" placeholder="empty"/></span>	
+		</div>
+	</div>
+<div *ngFor="let thing of displayData">
+	<app-explorer-entry [entry]="thing" [editing]="editing"></app-explorer-entry>
+</div>
+</div>
+</div>
+<!--
+	<app-explorer-entry #blast></app-explorer-entry>
+	-->

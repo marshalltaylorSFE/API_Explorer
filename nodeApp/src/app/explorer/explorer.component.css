@@ -1,0 +1,63 @@
+//Sparkfun red: #e0311d
+.twistylist {
+  cursor: default;
+  padding: 8px 0 0 8px;
+  vertical-align:middle;
+}
+
+.list-align{
+	display:inline;
+	vertical-align: 0px;
+}
+
+.twistylist li:hover {
+	background-color: #ff7666;
+	border-radius: 4px 0px 0px 4px;
+}
+
+.twistylist li.selected:hover{
+	background-color: #e0311d;
+	border-radius: 4px 0px 0px 4px;
+}
+
+.twistylist .item {
+  list-style-type: none;
+  padding: 0 0 0 4px;
+}
+
+.twistylist .subitem {
+  list-style-type: none;
+  padding: 0 0 0 20px;
+}
+
+.twistylist .subsubitem {
+  list-style-type: none;
+  padding: 0 0 0 40px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.selected {
+	background-color: #ffa5a5;
+	border-radius: 4px 0px 0px 4px;
+	
+}
+
+.purple {
+  background-color: #ffe0e0;
+}
+
+.fullHeight{
+	height: 100%;
+}
+
+.no-padding {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.debug {
+    border: 3px solid red;
+}

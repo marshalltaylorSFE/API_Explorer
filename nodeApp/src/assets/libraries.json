@@ -1,0 +1,13 @@
+{
+  "paths": [
+    {
+      "path": "uCModules.json"
+    },
+    {
+      "path": "WiFiServer.json"
+    },
+    {
+      "path": "file.json"
+    }
+  ]
+}

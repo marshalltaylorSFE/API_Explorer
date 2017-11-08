@@ -1,0 +1,45 @@
+{
+  "name": "file.json",
+  "topic": "Template",
+  "sections": [
+    {
+      "section": "Overview",
+      "entries": [
+        {
+          "entry": "Goal",
+          "data": ["Goal information"]
+        },
+        {
+          "entry": "Background",
+          "data": ["Background information"]
+        }
+      ]
+    },
+    {
+      "section": "Hardware",
+      "entries": [
+        {
+          "entry": "Parts",
+          "data": ["Part list"]
+        },
+        {
+          "entry": "Assembly",
+          "data": ["Assembly information"]
+        }
+      ]
+    },
+    {
+      "section": "API",
+      "entries": [
+        {
+          "entry": "Constructor",
+          "data": ["How to construct"]
+        },
+        {
+          "entry": "someFunction",
+          "data": ["How to use function."]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+.topleft {
+    position: absolute;
+} 
+
+.rightButton {
+    position: absolute;
+    right: 0px;
+	top: 0px;
+}
+
+textarea {
+	width: 100%;
+}
+
+.explorer-cell {
+	position: relative;
+    margin: auto;
+    width: 100%;
+//    border: 3px solid green;
+    padding: 10px;
+}
+
+:host ::ng-deep >>> .debug {
+    border: 3px solid red;
+}
+
+.debug {
+    border: 3px solid red;
+}
+
+:host ::ng-deep >>> .rendered li {
+    list-style-type: none;
+}

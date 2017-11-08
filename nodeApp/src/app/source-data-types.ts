@@ -1,6 +1,7 @@
 export class IndexElement {
 	name: string = 'placeholder';
-	path: string = 'path';
+	topicRef: number;
+	sectionRef: number;
 	subElements: IndexElement[];
 	expandable: boolean = false;
 	expanded: boolean = false;
@@ -8,12 +9,11 @@ export class IndexElement {
 
 export class Index {
 	indexElements: IndexElement[];
-	debugString: string = 'buggy';
 }
 
 export class DataElement {
 	name: string;
-	body: string;
+	body: string[];
 }
 
 export class Data {

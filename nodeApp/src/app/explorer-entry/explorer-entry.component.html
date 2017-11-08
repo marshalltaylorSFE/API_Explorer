@@ -1,0 +1,19 @@
+<div class="explorer-cell">
+	<div class="">
+		<span *ngIf="editing == false"> 
+			<h4>{{entry.entry}}</h4>
+			<div class="rendered" [innerHTML]="postString | safeHtml"></div>
+		</span>
+		<div *ngIf="editing == true" style="height:100%">
+			<div class="container-fluid fullHeight" style="width:100%">
+				<div class="row" style="padding:2px">
+					<span style="width:50px"><strong style="vertical-align: middle">Entry:</strong></span>
+					<span style="width:80%"><input style="width:80%" [(ngModel)]="entry.entry" placeholder="empty"/></span>
+				</div>
+				<div class="row" style="height:150px">
+					<textarea [(ngModel)]="postString" style="height:100%"></textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

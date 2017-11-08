@@ -1,0 +1,105 @@
+/*h1 {
+	color: green;
+	text-align: right;
+	text-decoration: overline;
+	text-indent: 50px;
+	letter-spacing: 3px;
+	text-shadow: 3px 2px red;
+	line-height: 0.8;
+	text-indent: 50px;
+	text-transform: uppercase;
+	word-spacing: -5px;
+direction 		
+text-overflow 	
+unicode-bidi 	
+vertical-align 	
+white-space 	
+}
+	
+	font-style: normal;
+	font-style: italic;
+	font-style: oblique;
+    font-size: 14px;	
+	
+*/
+
+.debug {
+    border: 1px solid red;
+}
+
+.standard {
+    padding-left: 1.0em;
+    font-size: 100%;
+	font-family: Georgia, serif;
+}
+
+.standard h1 {
+    font-size: 2.0em;
+	color: #46007c;
+	line-height: 0.5em;
+}
+
+.standard  h2  {
+    font-size: 1.6em;
+	line-height: 0.6em;
+	text-indent: 0.5em;
+}
+
+.standard h3 {
+    font-size: 1.2em;
+	font-weight: 600;
+	line-height: 1.4em;
+	text-indent: 1.0em;
+	color: #3a353d;
+}
+
+.standard h4 {
+    font-size: 1.1em;
+	line-height: 1.0em;
+	text-indent: 1.5em;
+}
+
+.standard p {
+	padding-top:0.5em;
+    font-size: 1.0em;
+	line-height: 1.0em;
+	text-indent: 1.7em;
+}
+
+.standard ul {
+	margin-left: 0px;
+    padding-top: 0.1em;
+    padding-left: 1.0em;
+}
+.standard li {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 1.0em;
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+	text-indent: 1.0em;
+}
+
+.standard b {
+	font-size: 1.05em;
+	font-weight: bold;
+	color: 44374c;
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+	text-indent: 1.0em;
+}
+
+.standard i {
+	font-size: 1.05em;
+	letter-spacing: 0.05em;
+}
+
+
+
+
+
+
+
+
+

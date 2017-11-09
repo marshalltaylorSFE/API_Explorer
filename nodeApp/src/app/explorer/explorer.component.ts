@@ -1,6 +1,7 @@
-import { Component, OnInit, ApplicationRef, Input, Output } from '@angular/core';
+import { Component, OnInit, ApplicationRef, Input, Output, ViewChild } from '@angular/core';
 import { ExplorerService } from '../explorer.service';
-import { Directory, File, Section, Entry } from '../explorer-data-types';
+import { FileCreatorService } from '../file-creator.service';
+import { Directory, ExpFile, Section, Entry } from '../explorer-data-types';
 import { Index, IndexElement, Data, DataElement } from '../source-data-types';
 import { ExplorerEntryComponent } from '../explorer-entry/explorer-entry.component';
 
@@ -8,12 +9,16 @@ import { ExplorerEntryComponent } from '../explorer-entry/explorer-entry.compone
   selector: 'app-explorer',
   templateUrl: './explorer.component.html',
   styleUrls: ['./explorer.component.css'],
-  providers: [ExplorerService]
+  providers: [ExplorerService,
+  FileCreatorService
+  ]
 })
 export class ExplorerComponent implements OnInit {
+  @ViewChild('selectedFile') selectedFileEl;
   @Input() tocSrc: string;
+  headerFileString: string = "";
   directory: Directory;
-  files: File[] = [];
+  files: ExpFile[] = [];
   index: Index = new Index;
   displayTopic: string;
   displaySection: string;
@@ -24,7 +29,8 @@ export class ExplorerComponent implements OnInit {
   
   constructor( 
 	private explorerService: ExplorerService,
-	private applicationRef: ApplicationRef
+	private fileCreatorService: FileCreatorService,
+	private applicationRef: ApplicationRef,
 	){}
 
   async ngOnInit() {
@@ -96,6 +102,7 @@ export class ExplorerComponent implements OnInit {
 		} else {
 			this.expand( inputElement );
 		}
+		this.fileCreatorService.debug();
 	}
 	
 	createNewFile(){
@@ -109,7 +116,7 @@ export class ExplorerComponent implements OnInit {
 		_topicElement.expanded = true;
 		this.index.indexElements.push(_topicElement);
 		//Create file
-		let _file: File = new File;
+		let _file: ExpFile = new ExpFile;
 		_file.name = "newname.json";
 		_file.topic = "New Topic";
 		_file.sections = [];
@@ -203,4 +210,10 @@ export class ExplorerComponent implements OnInit {
         window.URL.revokeObjectURL(url);  
     }, 2000);  
 }
+  parseHeaderFile() {
+	  this.files.push(this.fileCreatorService.createFileFromHeader(this.headerFileString));
+	  this.buildIndex();
+	  this.applicationRef.tick();	  
+  }
+
 }

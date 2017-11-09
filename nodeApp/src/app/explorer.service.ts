@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Directory, File } from './explorer-data-types';
+import { Directory, ExpFile } from './explorer-data-types';
 
 @Injectable()
 export class ExplorerService {
@@ -24,11 +24,11 @@ export class ExplorerService {
   }
 
   //This takes a directory listing, and returns an array of files
-  async getFiles( _dir: Directory ): Promise<File[]> {
-	return new Promise<File[]>(resolve => {
+  async getFiles( _dir: Directory ): Promise<ExpFile[]> {
+	return new Promise<ExpFile[]>(resolve => {
 		let filesFetched: number = 0;
 		let filesRequested: number = _dir.paths.length;
-		let _files: File[] = [];
+		let _files: ExpFile[] = [];
 		let _data: any;
 		for( let path of _dir.paths ) {
 			this.http.get('assets/' + path).subscribe(data => {

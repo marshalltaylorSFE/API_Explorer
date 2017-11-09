@@ -1,8 +1,8 @@
 <div class="explorer-cell">
 	<div class="">
-		<span *ngIf="editing == false"> 
-			<h4>{{entry.entry}}</h4>
-			<div class="rendered" [innerHTML]="postString | safeHtml"></div>
+		<span *ngIf="editing == false" class="stdInner"> 
+			<h1>{{entry.entry}}</h1>
+			<div class="stdInner" [innerHTML]="postString | safeHtml"></div>
 		</span>
 		<div *ngIf="editing == true" style="height:100%">
 			<div class="container-fluid fullHeight" style="width:100%">

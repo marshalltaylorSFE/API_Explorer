@@ -4,7 +4,9 @@ import { Entry } from '../explorer-data-types';
 @Component({
   selector: 'app-explorer-entry',
   templateUrl: './explorer-entry.component.html',
-  styleUrls: ['./explorer-entry.component.css']
+  styleUrls: ['./explorer-entry.component.css',
+	'../standard.css'
+	]
 })
 export class ExplorerEntryComponent implements OnInit, OnChanges {
   @Input() entry: Entry;

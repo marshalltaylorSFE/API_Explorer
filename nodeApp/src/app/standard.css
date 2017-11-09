@@ -23,29 +23,31 @@ white-space
 	
 */
 
-.debug {
+:host ::ng-deep >>> .debug {
     border: 1px solid red;
 }
 
-.standard {
+
+:host ::ng-deep >>> .stdInner {
     padding-left: 1.0em;
     font-size: 100%;
 	font-family: Georgia, serif;
+	line-height: 1.4em;
 }
 
-.standard h1 {
+:host ::ng-deep >>> .stdInner h1 {
     font-size: 2.0em;
-	color: #46007c;
+	color: #7a0000;
 	line-height: 0.5em;
 }
 
-.standard  h2  {
+:host ::ng-deep >>> .stdInner  h2  {
     font-size: 1.6em;
 	line-height: 0.6em;
 	text-indent: 0.5em;
 }
 
-.standard h3 {
+:host ::ng-deep >>> .stdInner h3 {
     font-size: 1.2em;
 	font-weight: 600;
 	line-height: 1.4em;
@@ -53,26 +55,25 @@ white-space
 	color: #3a353d;
 }
 
-.standard h4 {
-    font-size: 1.1em;
+:host ::ng-deep >>> .stdInner h4 {
+    font-size: 1.2em;
 	line-height: 1.0em;
 	text-indent: 1.5em;
 }
 
-.standard p {
+:host ::ng-deep >>> .stdInner p {
 	padding-top:0.5em;
     font-size: 1.0em;
-	line-height: 1.0em;
+	line-height: 1.4em;
 	text-indent: 1.7em;
 }
 
-.standard ul {
+:host ::ng-deep >>> .stdInner ul {
 	margin-left: 0px;
     padding-top: 0.1em;
     padding-left: 1.0em;
 }
-.standard li {
-	font-family: Verdana, Geneva, sans-serif;
+:host ::ng-deep >>> .stdInner li {
 	font-size: 1.0em;
 	list-style-type: none;
     margin: 0;
@@ -80,7 +81,7 @@ white-space
 	text-indent: 1.0em;
 }
 
-.standard b {
+:host ::ng-deep >>> .stdInner b {
 	font-size: 1.05em;
 	font-weight: bold;
 	color: 44374c;
@@ -90,12 +91,10 @@ white-space
 	text-indent: 1.0em;
 }
 
-.standard i {
+:host ::ng-deep >>> .stdInner i {
 	font-size: 1.05em;
 	letter-spacing: 0.05em;
 }
-
-
 
 
 

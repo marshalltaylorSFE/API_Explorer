@@ -13,7 +13,7 @@ export class Section {
 	entries: Entry[];
 }
 
-export class File {
+export class ExpFile {
 	name: string;
 	topic: string;
 	sections: Section[];

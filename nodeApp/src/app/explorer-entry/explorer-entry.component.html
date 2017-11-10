@@ -1,7 +1,7 @@
 <div class="explorer-cell">
 	<div class="">
 		<span *ngIf="editing == false" class="stdInner"> 
-			<h1>{{entry.entry}}</h1>
+			<h2>{{entry.entry}}</h2>
 			<div class="stdInner" [innerHTML]="postString | safeHtml"></div>
 		</span>
 		<div *ngIf="editing == true" style="height:100%">

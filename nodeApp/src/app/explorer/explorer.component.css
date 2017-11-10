@@ -48,6 +48,9 @@
   background-color: #ffe0e0;
 }
 
+.yellow {
+  background-color: #fafafa;
+}
 .fullHeight{
 	height: 100%;
 }
@@ -59,4 +62,12 @@
 
 .debug {
     border: 3px solid red;
+}
+
+textarea {
+	width: 100%;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    height: 300px;
+    resize: none; /* Remove this if you want the user to resize the textarea */
 }

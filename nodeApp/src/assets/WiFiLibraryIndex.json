@@ -1,0 +1,37 @@
+{
+  "paths": [
+    {
+      "path": "ETH.json"
+    },
+    {
+      "path": "WiFi.json"
+    },
+    {
+      "path": "WiFiAP.json"
+    },
+    {
+      "path": "WiFiClient.json"
+    },
+    {
+      "path": "WiFiGeneric.json"
+    },
+    {
+      "path": "WiFiMulti.json"
+    },
+    {
+      "path": "WiFiScan.json"
+    },
+    {
+      "path": "WiFiServer.json"
+    },
+    {
+      "path": "WiFiSTA.json"
+    },
+    {
+      "path": "WiFiType.json"
+    },
+    {
+      "path": "WiFiUdp.json"
+    }
+  ]
+}

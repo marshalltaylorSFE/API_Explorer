@@ -1,5 +1,6 @@
 <div class="container-fluid fullHeight">
 <div class="row fullHeight">
+<!-- the index pane -->
 <div class="col-md-2 col-sm-3 purple sidenav no-padding">
   <ul class="twistylist">
     <div *ngFor="let thing of index.indexElements"> 
@@ -10,6 +11,7 @@
 			</span>
 			<span (click)="buildBody(thing)">{{thing.name}}</span>
 			<span *ngIf="editing" (click)="createNewSection(thing)" class="glyphicon glyphicon-plus" style="font-size:10px;"></span>
+			<span *ngIf="editing" (click)="deleteFile(thing)" class="glyphicon glyphicon-minus" style="font-size:10px;"></span>
 			<span *ngIf="editing" (click)="downloadFile(thing)" class="glyphicon glyphicon-floppy-disk" style="font-size:12px;"></span>
 		</li>
 		<div *ngIf="thing.expanded==true">
@@ -21,9 +23,13 @@
 					</span>
 					<span (click)="buildBody(thing)" class="item">{{thing.name}}</span>
 					<span *ngIf="editing" (click)="createNewEntry(thing)" class="glyphicon glyphicon-plus" style="font-size:10px;"></span>
+					<span *ngIf="editing" (click)="deleteSection(thing)" class="glyphicon glyphicon-minus" style="font-size:10px;"></span>
 				</li>
 				<div *ngIf="thing.expandable && thing.expanded" class="subsubitem">
-					<li *ngFor="let subthing of thing.subElements" class="item">{{subthing.name}}</li>
+					<li *ngFor="let subthing of thing.subElements" class="item">
+					<span class="item">{{subthing.name}}</span>
+					<span *ngIf="editing" (click)="deleteEntry(subthing)" class="glyphicon glyphicon-minus" style="font-size:10px;"></span>
+					</li>
 				</div>
 			</div>
 		</div>
@@ -34,16 +40,23 @@
 	<button (click)="showEdit()">Edit</button>
 	<button (click)="showView()">View</button>
   </div>
-  <div>
-    <textarea style="width:60%" [(ngModel)]="headerFileString" placeholder="Ctrl-V .h file here"></textarea>
+  <div *ngIf="editing">
+	<p>1. Paste header file into text box:</p>
+    <textarea [(ngModel)]="headerFileString" placeholder="Paste .h file here"></textarea>
+	<p>2. Click button to auto-format</p>
 	<button (click)="parseHeaderFile()">Parse</button>
   </div>
 </div>
+<!-- the explorer pane -->
 <div class="col-md-10 col-sm-9 yellow">
 	<div *ngIf="editing">
 		<div class="row" style="padding:2px">
 			<span style="width:50px"><strong style="vertical-align: middle">Topic:</strong></span>
 			<span style="width:80%"><input style="width:80%" [(ngModel)]="displayTopic" placeholder="empty"/></span>	
+		</div>
+		<div class="row" style="padding:2px">
+			<span style="width:50px"><strong style="vertical-align: middle">File Name:</strong></span>
+			<span style="width:80%"><input style="width:80%" [(ngModel)]="displayFileName" placeholder="empty"/></span>	
 		</div>
 		<div class="row" style="padding:2px">
 			<span style="width:50px"><strong style="vertical-align: middle">Section:</strong></span>

@@ -41,6 +41,7 @@ export class ExplorerEntryComponent implements OnInit, OnChanges {
   
   setBody() {
 	  this.entry.data = this.postString.split("\n");
+	  if( this.entry.data[this.entry.data.length - 1] == "" ) this.entry.data.splice(this.entry.data.length - 1, 1);
   }
 
 }

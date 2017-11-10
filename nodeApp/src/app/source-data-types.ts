@@ -2,6 +2,7 @@ export class IndexElement {
 	name: string = 'placeholder';
 	topicRef: number;
 	sectionRef: number;
+	entryRef: number;
 	subElements: IndexElement[];
 	expandable: boolean = false;
 	expanded: boolean = false;
